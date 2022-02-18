@@ -44,6 +44,7 @@ export EDITOR=vim
  alias lan='ip addr | grep "inet "&& grep "nameserver" /etc/resolv.conf'
  alias spt='/home/dave/Scripts/launchspt'
  alias k=kubectl
+ 
 # Alias's to modified Pacman
  alias install='sudo pacman -S'
  alias remove='sudo pacman -Rns'
@@ -52,43 +53,6 @@ export EDITOR=vim
  alias mine='sudo pacman -Qe'
  alias search='sudo pacman -Ss'
 
-#Alias to Mount Network Shares
-alias eopsinmnt="sudo mount 10.0.0.7:/mnt/user/Eopsin /mnt/eopsin"
-
-# Alias's for rdp
- alias rdp='xfreerdp /u:dave /w:1920 /h:1020 /v:10.0.0.101:3389'
-
-#Alias's for SSH Docker Machines
- alias nuc='export TERM=xterm-256color && ssh dave@10.0.0.50'
- alias deb-srvc='export TERM=xterm-256color && ssh dave@10.0.0.60'
- alias swag='export TERM=xterm-256color && ssh swag@10.0.0.24'
- alias emby='export TERM=xterm-256color && ssh dave@10.0.0.27'
- alias dockermm='export TERM=xterm-256color && ssh dave@10.0.0.26'
- alias linodecraft='export TERM=xterm-256color && ssh det1181@172.105.3.94'
-#Alias's for SSH Network Share Machines
- alias eopsin='export TERM=xterm-256color && ssh root@10.0.0.7'
- alias deb-nfs='export TERM=xterm-256color && ssh dave@10.0.0.59'
- alias nxtcld='export TERM=xterm-256color && ssh root@10.0.0.25'
-#Alias's for SSH DNS Servers
- alias pihole2='export TERM=xterm-256color && ssh root@10.0.0.252'
- alias pifi='export TERM=xterm-256color && ssh root@192.168.1.30'
- alias pihole='export TERM=xterm-256color && ssh root@10.0.0.253'
-#Alias's for SSH Promox Servers
- alias prox1='export TERM=xterm-256color && ssh root@10.0.0.20'
- alias prox2='export TERM=xterm-256color && ssh root@10.0.0.21'
- alias prox3='export TERM=xterm-256color && ssh root@10.0.0.23'
-#Alias's for SSH SQL Servers
- alias mysqlxc='export TERM=xterm-256color && ssh root@10.0.0.100'
-#Alias's for SSH k3s Cluster
- alias ld1='export TERM=xterm-256color && ssh dave@10.0.0.51'
- alias ld2='export TERM=xterm-256color && ssh dave@10.0.0.52'
- alias ld3='export TERM=xterm-256color && ssh dave@10.0.0.53'
- alias ld4='export TERM=xterm-256color && ssh dave@10.0.0.54'
- alias ld5='export TERM=xterm-256color && ssh dave@10.0.0.55'
- alias ld6='export TERM=xterm-256color && ssh dave@10.0.0.56'
-
-#Alias for Git
-# alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME' 
 
 #Alias's for Humans
  alias df='df -h'
