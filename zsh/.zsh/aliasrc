@@ -30,7 +30,7 @@ ex ()
 export EDITOR=vim
 
 
-# Alias's to modified commands
+# Alias to modified commands
  alias ls='exa -l --color=auto'
  alias la='exa -la --color=auto'
  alias ..='cd ..'
@@ -42,10 +42,11 @@ export EDITOR=vim
  alias grep='grep --color=auto'
  alias vim=nvim
  alias lan='ip addr | grep "inet "&& grep "nameserver" /etc/resolv.conf'
+ alias wan="curl ip.me"
  alias spt='/home/dave/Scripts/launchspt'
  alias k=kubectl
  
-# Alias's to modified Pacman
+# Alias to modified Pacman
  alias install='sudo pacman -S'
  alias remove='sudo pacman -Rns'
  alias update='sudo pacman -Syu && paru -Syu'
@@ -54,5 +55,5 @@ export EDITOR=vim
  alias search='sudo pacman -Ss'
 
 
-#Alias's for Humans
+#Alias for Humans
  alias df='df -h'
