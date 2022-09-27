@@ -193,7 +193,7 @@ prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
 
 ##### DEFAULT WIDGET SETTINGS #####
 widget_defaults = dict(
-    font="JetBrains Mono Nerd Font",
+    font="JetBrainsMono",
     fontsize = 16,
     padding = 0,
     background=colors[2]
@@ -202,81 +202,60 @@ extension_defaults = widget_defaults.copy()
 
 def init_widgets_list():
     widgets_list = [
-              widget.Sep(
-                       linewidth = 0,
-                       padding = 6,
-                       foreground = colors[2],
-                       background = colors[0]
+              widget.Image(
+                       filename = "~/.config/qtile/Assets/1-1.png"
                        ),
               widget.Image(
-                       filename = "~/.config/qtile/icons/tux-white.png",
+                       filename = "~/.config/qtile/Assets/arch.png",
                        scale = "True",
+                       background='#3C3836',
                        mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn("sh /home/dave/.config/rofi/launchers/colorful/launcher.sh")},
                        ),
-              widget.Sep(
-                       linewidth = 0,
-                       padding = 6,
-                       foreground = colors[2],
-                       background = colors[0]
+              widget.Image(
+                       filename = "~/.config/qtile/Assets/6-2.png",
                        ),
               widget.GroupBox(
                        font = "JetBrains Mono Nerd Font Bold",
                        fontsize = 18,
-                       margin_y = 3,
-                       margin_x = 0,
-                       padding_y = 5,
-                       padding_x = 3,
                        borderwidth = 3,
                        active = colors[3],
                        inactive = colors[2],
-                       rounded = False,
-                       highlight_color = colors[0],
+                       highlight_color = "#665C54",
                        highlight_method = "line",
                        this_current_screen_border = colors[6],
                        this_screen_border = colors [4],
                        other_current_screen_border = colors[6],
                        other_screen_border = colors[4],
-                       foreground = colors[2],
-                       background = colors[0]
+                       foreground = "#665C54",
+                       background = "#665C54",
+                       rounded = True,
+                       disable_drag = False,
                        ),
-             widget.TextBox(
-                       text = '|',
-                       font = "JetBrains Mono Nerd Font",
-                       background = colors[0],
-                       foreground = '474747',
-                       padding = 2,
-                       fontsize = 18
+              widget.Image(
+                       filename = "~/.config/qtile/Assets/4-1.png"
                        ),
               widget.CurrentLayoutIcon(
                        custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
-                       foreground = colors[2],
-                       background = colors[0],
+                       background = "#504945",
                        padding = 0,
-                       scale = 0.7
+                       scale = 0.5,
                        ),
               widget.CurrentLayout(
-                       foreground = colors[2],
-                       background = colors[0],
+                       background = "#504945",
                        padding = 5
                        ),
-             widget.TextBox(
-                       text = '|',
-                       font = "JetBrains Mono Nerd Font",
-                       background = colors[0],
-                       foreground = '474747',
-                       padding = 2,
-                       fontsize = 18
+              widget.Image(
+                       filename = "~/.config/qtile/Assets/5-2.png"
                        ),
               widget.WindowName(
-                       foreground = colors[6],
-                       background = colors[0],
-                       padding = 0
-                       ),
+                      background = '#282828',
+                      format = "{name}",
+                      empty_group_string = 'Desktop',
+                      ),
               widget.Spacer(
                       background = colors[0]
                        ),
               widget.TextBox(
-                       text = ' ',
                        font = "JetBrains Mono Nerd Font",
                        background = colors[0],
                        foreground = colors[8],
@@ -293,92 +272,37 @@ def init_widgets_list():
               widget.Spacer(
                       background = colors[0]
                        ),
-             widget.TextBox(
-                       text = '',
-                       font = "JetBrains Mono Nerd Font",
-                       background = colors[0],
-                       foreground = '474747',
-                       padding = 0,
-                       fontsize = 85
-                       ),
-              widget.TextBox(
-                       text = ' ﯱ',
-                       mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e htop')},
-                       font = "JetBrains Mono Nerd Font",
-                       background = colors[0],
-                       foreground = colors[8],
-                       padding = 0,
-                       fontsize = 18,
-                       ),
-              widget.Net(
-                       background = colors[0],
-                       foreground = colors[2],
-                       samples = 60,
-                       prefix='M',
-                       ),
-             widget.TextBox(
-                       text = '',
-                       font = "JetBrains Mono Nerd Font",
-                       background = colors[0],
-                       foreground = '474747',
-                       padding = 2,
-                       fontsize = 85
-                       ),
-              widget.TextBox(
-                       text = ' ',
-                       mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e htop')},
-                       font = "JetBrains Mono Nerd Font",
-                       background = colors[0],
-                       foreground = colors[8],
-                       padding = 0,
-                       fontsize = 18
+              widget.Image(
+                       filename = "~/.config/qtile/Assets/1-1.png",
                        ),
               widget.CPU(
-                       background = colors[0],
+                       background = "#3C3836",
                        foreground = colors[2],
                        samples = 60,
                        ),
-             widget.TextBox(
-                       text = '',
-                       font = "JetBrains Mono Nerd Font",
-                       background = colors[0],
-                       foreground = '474747',
-                       padding = 2,
-                       fontsize = 85
+              widget.Image(
+                       filename = "~/.config/qtile/Assets/2-1.png",
                        ),
               widget.TextBox(
-                       text = ' ',
+                       text = "MEM",
                        mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e htop')},
                        font = "JetBrains Mono Nerd Font",
-                       background = colors[0],
-                       foreground = colors[8],
+                       background = "#504945",
+                       foreground = colors[2],
                        padding = 0,
-                       fontsize = 18
+                       fontsize = 16
                        ),
               widget.Memory(
-                       background = colors[0],
+                       background = "#504945",
                        foreground = colors[2],
                        measure_mem='G',
                        ),
-             widget.TextBox(
-                       text = '',
-                       font = "JetBrains Mono Nerd Font",
-                       background = colors[0],
-                       foreground = '474747',
-                       padding = 2,
-                       fontsize = 85
-                       ),
-              widget.TextBox(
-                       text=' ',
-                       font = "JetBrains Mono Nerd Font",
-                       background = colors[0],
-                       foreground = colors[8],
-                       padding = 0,
-                       fontsize = 18
+              widget.Image(
+                       filename = "~/.config/qtile/Assets/3-1.png",
                        ),
               widget.CheckUpdates(
                        update_interval = 60,
-                       distro = "Arch",
+                       distro = "Arch_checkupdates",
                        display_format = "Updates: {updates} ",
                        no_update_string='No updates',
                        foreground = colors[2],
@@ -386,50 +310,28 @@ def init_widgets_list():
                        colour_no_updates = colors[2],
                        mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e sudo pacman -Syu && paru -Syu')},
                        padding = 5,
-                       background = colors[0],
+                       background = "#665C54",
                        ),
-             widget.TextBox(
-                       text = '',
-                       font = "JetBrains Mono Nerd Font",
-                       background = colors[0],
-                       foreground = '474747',
-                       padding = 2,
-                       fontsize = 85
-                       ),
-              widget.TextBox(
-                       text = ' ',
-                       font = "JetBrains Mono Nerd Font",
-                       background = colors[0],
-                       foreground = colors[8],
-                       padding = 0,
-                       fontsize = 18
+               widget.Image(
+                       filename = "~/.config/qtile/Assets/7-1.png",
                        ),
               widget.PulseVolume(
                        foreground = colors[2],
-                       background = colors[0],
+                       background = "#7C6F64",
                        fmt = 'Vol: {}',
                        padding = 5
                        ),
-             widget.TextBox(
-                       text = '',
-                       font = "JetBrains Mono Nerd Font",
-                       background = colors[0],
-                       foreground = '474747',
-                       padding = 2,
-                       fontsize = 85
+              widget.Image(
+                       filename = "~/.config/qtile/Assets/1-2.png",
                        ),
               widget.Systray(
-                       background = colors[0],
+                       background = "#3C3836",
                        padding = 5
                        ),
-             widget.TextBox(
-                       text = '|',
-                       font = "JetBrains Mono Nerd Font",
-                       background = colors[0],
-                       foreground = '474747',
-                       padding = 2,
-                       fontsize = 18,
+              widget.Image(
+                       filename = "~/.config/qtile/Assets/6-1.png",
                        ),
+
               ]
     return widgets_list
 
