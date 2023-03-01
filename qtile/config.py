@@ -21,7 +21,7 @@ from libqtile.layout.floating import Floating
 
 mod = "mod4"              # Sets mod key to SUPER/WINDOWS
 myTerm = "alacritty"      # My terminal of choice
-myBrowser = "librewolf" # My browser of choice
+myBrowser = "chromium" # My browser of choice
 myCalendar = "when"
 
 keys = [
@@ -55,7 +55,7 @@ keys = [
              desc='Shutdown Qtile'
              ),
          Key([mod], "e",
-             lazy.spawn("pcmanfm -n"),
+             lazy.spawn("alacritty -e ranger"),
              desc='File Manager'
              ),
          ### Switch focus of monitors
@@ -68,30 +68,30 @@ keys = [
              desc='Move focus to prev monitor'
              ),
          ### Window controls
-         Key([mod], "j",
+         Key([mod], "Down",
              lazy.layout.down(),
              desc='Move focus down in current stack pane'
              ),
-         Key([mod], "k",
+         Key([mod], "Up",
              lazy.layout.up(),
              desc='Move focus up in current stack pane'
              ),
-         Key([mod, "shift"], "j",
+         Key([mod, "shift"], "Down",
              lazy.layout.shuffle_down(),
              lazy.layout.section_down(),
              desc='Move windows down in current stack'
              ),
-         Key([mod, "shift"], "k",
+         Key([mod, "shift"], "Up",
              lazy.layout.shuffle_up(),
              lazy.layout.section_up(),
              desc='Move windows up in current stack'
              ),
-         Key([mod], "h",
+         Key([mod], "Left",
              lazy.layout.shrink(),
              lazy.layout.decrease_nmaster(),
              desc='Shrink window (MonadTall), decrease number in master pane (Tile)'
              ),
-         Key([mod], "l",
+         Key([mod], "Right",
              lazy.layout.grow(),
              lazy.layout.increase_nmaster(),
              desc='Expand window (MonadTall), increase number in master pane (Tile)'
@@ -124,15 +124,13 @@ keys = [
              ),
 ]
 
-groups = [Group("", layout='monadtall'),
-          Group("", layout='monadtall'),
-          Group("", matches=[Match(wm_class="zoom")], layout="stack"),
-          Group("一", layout='monadtall'),
+groups = [Group("一", layout='monadtall'),
           Group("二", layout='monadtall'),
           Group("三", layout='monadtall'),
           Group("四", layout='monadtall'),
           Group("五", layout='monadtall'),
-          Group("六", layout='monadtall')]
+          Group("六", layout='monadtall'),
+          Group("", matches=[Match(wm_class="zoom")], layout="stack")]
 
 # Allow MODKEY+[0 through 9] to bind to groups, see https://docs.qtile.org/en/stable/manual/config/groups.html
 # MOD4 + index Number : Switch to Group[index]
@@ -150,7 +148,7 @@ layout_theme = {"border_width": 3,
 groups.append(ScratchPad('scratchpad', [
     DropDown('term', myTerm, width=0.4, height=0.5, x=0.3, y=0.1, opacity=1),
     DropDown('mixer', 'pavucontrol', width=0.4, height=0.6, x=0.3, y=0.1, opacity=1),
-    DropDown('when', 'alacritty when', x=0.3, y=0.1, opacity=1),
+    DropDown('when', 'galculator', x=0.3, y=0.1, opacity=1),
     DropDown('bitwarden', 'bitwarden-desktop', width=0.4, height=0.6, x=0.3, y=0.1, opacity=1),
 ]))
 # extend keys list with keybinding for scratchpad
@@ -341,7 +339,7 @@ def init_widgets_screen1():
 
 def init_widgets_screen2():
     widgets_screen2 = init_widgets_list()
-    del widgets_screen2[28:32]               # Slicing removes unwanted widgets (systray) on Monitors 2
+    del widgets_screen2[23:32]               # Slicing removes unwanted widgets (systray) on Monitors 2
     return widgets_screen2                 # Monitor 2 will display all widgets in widgets_list
 
 def init_widgets_screen3():
@@ -408,7 +406,7 @@ floating_layout = layout.Floating(float_rules=[
     # file_progress, confirm, download and error.
     *layout.Floating.default_float_rules,
     Match(title='Confirmation'),      # tastyworks exit box
-    Match(title='Qalculate!'),        # qalculate-gtk
+    Match(title='galculator'),        # qalculate-gtk
     Match(wm_class='kdenlive'),       # kdenlive
     Match(wm_class='pinentry-gtk-2'), # GPG key password entry
 ])
