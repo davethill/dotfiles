@@ -31,8 +31,8 @@ export EDITOR=vim
 
 
 # Alias to modified commands
- alias ls='exa -l --color=auto'
- alias la='exa -la --color=auto'
+ alias ls='exa -l --long --header --color=always --group-directories-first'
+ alias la='exa -la --long --header --color=always --group-directories-first'
  alias ..='cd ..'
  alias ~='cd ~'
  alias cls=clear
