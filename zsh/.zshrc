@@ -41,7 +41,9 @@ _comp_options+=(globdots)               # Include hidden files.
 bindkey '^ ' autosuggest-accept
 
 # Load aliases and shortcuts if existent.
-[ -f "$HOME/.config/zsh/.zsh/aliasrc" ] && source "$HOME/.config/zsh/.zsh/aliasrc"
+#[ -f "$HOME/.config/zsh/.zsh/aliasrc-apt" ] && source "$HOME/.config/zsh/.zsh/aliasrc-apt"
+#[ -f "$HOME/.config/zsh/.zsh/aliasrc-dnf" ] && source "$HOME/.config/zsh/.zsh/aliasrc-dnf"
+[ -f "$HOME/.config/zsh/.zsh/aliasrc-pacman" ] && source "$HOME/.config/zsh/.zsh/aliasrc-pacman"
 
 # Load ; should be last.
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
