@@ -37,7 +37,7 @@ sudo pacman -S --noconfirm alacritty starship exa
 sudo pacman -S --noconfirm alsa-utils pavucontrol 
 
 # System Info Utils
-sudo pacman -S --noconfirm neofetch htop nitch
+sudo pacman -S --noconfirm neofetch htop 
 
 # Printing
 sudo pacman -S --noconfirm cups
@@ -78,5 +78,8 @@ cd ~
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
+
+# System Info Utils from Paru
+paru -S --noconfirm nitch
 
 printf "\e[1;32mDone! you can now reboot.\e[0m\n"
