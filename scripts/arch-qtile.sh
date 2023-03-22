@@ -5,12 +5,6 @@
 # Create .config folder
 mkdir ~/.config
 
-# Install lightdm
-sudo pacman -S --noconfirm lightdm lightdm-slick-greeter
-
-# Enable lightdm
-sudo systemctl enable lightdm
-
 # xorg display server installation
 sudo pacman -S --noconfirm xorg arandr
 
@@ -60,7 +54,7 @@ sudo pacman -S --noconfirm neovim
 sudo pacman -S --noconfirm ttf-jetbrains-mono-nerd papirus-icon-theme ttf-nerd-fonts-symbols-common ttf-noto-nerd ttf-opensans ttf-roboto ttf-hanazono
 
 # Install zsh and zsh tools
-sudo pacman -S --noconfirm zsh zsh-syntax-highlighting zsh-autosuggestions autojump zsh-completions
+sudo pacman -S --noconfirm zsh zsh-syntax-highlighting zsh-autosuggestions zsh-completions
 
 # Qtile Install 
 sudo pacman -S --noconfirm qtile
@@ -78,7 +72,13 @@ cd paru
 makepkg -si --noconfirm
 
 # System Info Utils from Paru
-paru -S --noconfirm nitch
+paru -S --noconfirm nitch lightdm-git 
+
+# Install lightdm
+sudo pacman -S --noconfirm lightdm-slick-greeter
+
+# Enable lightdm
+sudo systemctl enable lightdm
 
 # PIP Install psutil for Qtile Widgets
 pip install psutil
