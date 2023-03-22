@@ -72,13 +72,10 @@ cd paru
 makepkg -si --noconfirm
 
 # System Info Utils from Paru
-paru -S --noconfirm nitch lightdm-git 
-
-# Install lightdm
-sudo pacman -S --noconfirm lightdm-slick-greeter
+paru -S --noconfirm nitch ly-git
 
 # Enable lightdm
-sudo systemctl enable lightdm
+sudo systemctl enable ly.service
 
 # PIP Install psutil for Qtile Widgets
 pip install psutil
