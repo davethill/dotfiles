@@ -16,7 +16,10 @@ sudo pacman -S --noconfirm python3 python-pip make git
 # sudo pacman -S --noconfirm intel-microcode 
 
 # File Manager 
-sudo pacman -S --noconfirm pcmanfm ranger ueberzug udiskie nextcloud-client 
+sudo pacman -S --noconfirm pcmanfm ranger ueberzug udiskie
+
+# Install Nextcloud Client
+sudo pacman -S --noconfirm nextcloud-client 
 
 # System Tools
 sudo pacman -S --noconfirm dialog mtools dosfstools avahi nss-mdns acpi acpid gvfs nfs-utils ntfs-3g network-manager-applet unzip base-devel rust
@@ -80,5 +83,7 @@ sudo systemctl enable ly.service
 # PIP Install psutil for Qtile Widgets
 pip install psutil
 
+# Change Shell
+chsh -s $(which zsh)
 
 printf "\e[1;32mDone! you can now reboot.\e[0m\n"
