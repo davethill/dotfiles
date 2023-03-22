@@ -35,8 +35,9 @@ export EDITOR=vim
  alias la='exa -la --long --header --color=always --group-directories-first'
  alias ..='cd ..'
  alias ~='cd ~'
- alias cls=clear
- alias diff='colordiff'
+ alias cls="clear && nitch"
+ alias clss="clear"
+alias diff='colordiff'
  alias egrep='egrep --color=auto'
  alias fgrep='fgrep --color=auto'
  alias grep='grep --color=auto'
