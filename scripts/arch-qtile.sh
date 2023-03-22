@@ -25,7 +25,7 @@ sudo pacman -S --noconfirm python3 python-pip make git
 sudo pacman -S --noconfirm pcmanfm ranger ueberzug udiskie nextcloud-client 
 
 # System Tools
-sudo pacman -S --noconfirm dialog mtools dosfstools avahi nss-mdns acpi acpid gvfs nfs-utils ntfs-3g network-manager-applet unzip base-devel
+sudo pacman -S --noconfirm dialog mtools dosfstools avahi nss-mdns acpi acpid gvfs nfs-utils ntfs-3g network-manager-applet unzip base-devel rust
 
 sudo systemctl enable avahi-daemon
 sudo systemctl enable acpid
@@ -59,14 +59,12 @@ sudo pacman -S --noconfirm neovim
 # Install fonts and papirus icon theme 
 sudo pacman -S --noconfirm ttf-jetbrains-mono-nerd papirus-icon-theme ttf-nerd-fonts-symbols-common ttf-noto-nerd ttf-opensans ttf-roboto ttf-hanazono
 
-# Create folders in user directory (eg. Documents,Downloads,etc.)
-xdg-user-dirs-update
+# Install zsh and zsh tools
+sudo pacman -S --noconfirm zsh zsh-syntax-highlighting zsh-autosuggestions autojump zsh-completions
 
 # Qtile Install 
 sudo pacman -S --noconfirm qtile
 
-# Install zsh and zsh tools
-sudo pacman -S --noconfirm zsh zsh-syntax-highlighting zsh-autosuggestions autojump zsh-completions
 
 # Move dotfiles
 cd ~/dotfiles
@@ -77,7 +75,7 @@ cp -r alacritty bspwm neofetch nvim polybar qtile ranger rofi sxhkd zsh ~/.confi
 cd ~
 git clone https://aur.archlinux.org/paru.git
 cd paru
-makepkg -si
+makepkg -si --noconfirm
 
 # System Info Utils from Paru
 paru -S --noconfirm nitch
