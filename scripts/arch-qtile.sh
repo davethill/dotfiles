@@ -69,10 +69,12 @@ sudo pacman -S --noconfirm qtile
 sudo pacman -S --noconfirm zsh zsh-syntax-highlighting zsh-autosuggestions autojump zsh-completions
 
 # Move dotfiles
+cd ~/dotfiles
 cp .zshenv ~/
 cp -r alacritty bspwm neofetch nvim polybar qtile ranger rofi sxhkd zsh ~/.config
 
 # Set up AUR
+cd ~
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
