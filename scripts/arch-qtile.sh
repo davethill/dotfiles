@@ -82,4 +82,8 @@ makepkg -si
 # System Info Utils from Paru
 paru -S --noconfirm nitch
 
+# PIP Install psutil for Qtile Widgets
+pip install psutil
+
+
 printf "\e[1;32mDone! you can now reboot.\e[0m\n"
