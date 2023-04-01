@@ -30,7 +30,7 @@ sudo apt install -y pcmanfm ranger ueberzug udiskie
 sudo apt install -y nextcloud-client
 
 # System Tools
-sudo apt install -y dialog mtools dosfstools avahi-daemon acpi acpid gvfs-backends xfce4-power-manager
+sudo apt install -y dialog mtools dosfstools avahi-daemon acpi acpid gvfs-backends xfce4-power-manager build-essential libpam0g-dev libxcb-xkb-dev
 
 sudo systemctl enable avahi-daemon
 sudo systemctl enable acpid
