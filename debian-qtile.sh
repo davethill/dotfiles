@@ -20,8 +20,8 @@ sudo apt install -y libpangocairo-1.0-0
 sudo apt install -y python3-xcffib python3-cairocffi
 
 # Install qtile
-pip3 install qtile
-pip3 install psutil
+pip install qtile
+pip install psutil
 
 # File Manager
 sudo apt install -y pcmanfm ranger ueberzug udiskie
