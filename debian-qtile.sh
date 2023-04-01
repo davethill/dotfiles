@@ -77,7 +77,6 @@ cd ~
 git clone --recurse-submodules https://github.com/fairyglade/ly
 cd ly
 make
-make run
 make install installsystemd
 sudo systemctl enable ly.service
 
