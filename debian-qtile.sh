@@ -77,12 +77,12 @@ cp .zshenv ~/
 cp -r alacritty bspwm neofetch nvim polybar qtile ranger rofi sxhkd zsh ~/.config
 
 # Install ly 
-cd ~
-git clone --recurse-submodules https://github.com/fairyglade/ly
-cd ly
-make
-sudo make install installsystemd
-sudo systemctl enable ly.service
+#cd ~
+#git clone --recurse-submodules https://github.com/fairyglade/ly
+#cd ly
+#make
+#sudo make install installsystemd
+#sudo systemctl enable ly.service
 
 # Adding qtile.desktop to xsessions directory
 cat > ./temp << "EOF"
