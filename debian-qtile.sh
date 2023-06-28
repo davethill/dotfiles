@@ -1,19 +1,17 @@
 #!/bin/sh
 
-# Install packages after installing base Arch with no GUI
+# Install packages after installing base Debian with no GUI
 
-# Create .config folder
-mkdir ~/.config
 
 # xorg display server installation
 sudo apt install -y xserver-xorg xinit arandr
 
 # Python,make,git
-sudo apt install -y python3-pip make
+sudo apt install -y python3-pip gcc python3-dev make
 
 # Microcode for Intel/AMD
 # sudo apt install -y amd64-microcode
-# sudo apt install -y intel-microcode
+sudo apt install -y intel-microcode
 
 # Qtile requirements
 sudo apt install -y libpangocairo-1.0-0
@@ -27,7 +25,7 @@ pip install psutil
 sudo apt install -y pcmanfm ranger ueberzug udiskie
 
 # Install Nextcloud Client
-sudo apt install -y nextcloud-client
+sudo apt install -y nextcloud-desktop
 
 # System Tools
 sudo apt install -y dialog mtools dosfstools avahi-daemon acpi acpid gvfs-backends xfce4-power-manager build-essential libpam0g-dev libxcb-xkb-dev
@@ -44,9 +42,11 @@ sudo apt install -y alsa-utils pavucontrol
 # System Info Utils
 sudo apt install -y neofetch htop
 
-# Printing
+# Printingi and bluetooth 
 sudo apt install -y cups
+sudo apt install -y bluez blueman
 
+# sudo systemctl enable bluetooth
 sudo systemctl enable cups
 
 # Browser Installation
@@ -85,6 +85,7 @@ cat > ./temp << "EOF"
 [Desktop Entry]
 Name=Qtile
 Comment=Qtile Session
+Exec=qtile start
 Type=Application
 Keywords=wm;tiling
 EOF
