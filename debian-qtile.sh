@@ -4,7 +4,7 @@
 
 
 # xorg display server installation
-sudo apt install -y xserver-xorg xinit arandr
+sudo apt install -y xorg xinit arandr
 
 # Python,make,git
 sudo apt install -y python3-pip gcc python3-dev make
@@ -17,9 +17,13 @@ sudo apt install -y intel-microcode
 sudo apt install -y libpangocairo-1.0-0
 sudo apt install -y python3-xcffib python3-cairocffi
 
+# Remove Python /usr/lib/python3.x/EXTERNALLY-MANAGED
+sudo rm -rf /usr/lib/python3.11/EXTERNALLY-MANAGED
+
 # Install qtile
-pip install qtile
-pip install psutil
+git clone https://github.com/qtile/qtile
+cd qtile
+pip3 install .
 
 # File Manager
 sudo apt install -y pcmanfm ranger ueberzug udiskie
