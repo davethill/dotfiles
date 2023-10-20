@@ -44,7 +44,7 @@ sudo apt install -y alacritty exa
 sudo apt install -y alsa-utils pavucontrol
 
 # System Info Utils
-sudo apt install -y neofetch htop
+sudo apt install -y neofetch htop trash-cli
 
 # Printingi and bluetooth 
 sudo apt install -y cups
