@@ -13,9 +13,9 @@ nitrogen --restore &
 nextcloud &
 
 #### MONITORS ####
-bspc monitor DP-2 -d 1 2 3 4 5
-bspc monitor DP-3 -d 1 2 3 4 5
-bspc monitor HDMI-1 -d 1
+bspc monitor DP-6 -d 1 2 3 4 5
+bspc monitor DP-7 -d 1 2 3 4 5
+bspc monitor DP-5 -d 1
 
 #### BSPWM configuration ####
 #bspc config border_radius                8

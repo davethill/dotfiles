@@ -30,6 +30,10 @@ keys = [
              lazy.spawn(myTerm),
              desc='Launches My Terminal'
              ),
+         Key([mod], "l",
+             lazy.spawn("betterlockscreen -l"),
+             desc='Lock Screen'
+             ),
          Key([mod], "d",
              lazy.spawn("rofi -show drun -show-icons"),
              desc='Run Launcher'
@@ -129,7 +133,9 @@ groups = [Group("一", layout='monadtall'),
           Group("三", layout='monadtall'),
           Group("四", layout='monadtall'),
           Group("五", layout='monadtall'),
-          Group("六", layout='monadtall'),
+          Group("󰍳", layout='max'),
+          Group("", matches=[Match(wm_class="steam")], layout="floating"),
+          Group("󰹛", matches=[Match(wm_class="bambu-studio")], layout="monadtall"),
           Group("", matches=[Match(wm_class="zoom")], layout="stack")]
 
 # Allow MODKEY+[0 through 9] to bind to groups, see https://docs.qtile.org/en/stable/manual/config/groups.html
@@ -148,15 +154,15 @@ layout_theme = {"border_width": 3,
 groups.append(ScratchPad('scratchpad', [
     DropDown('term', myTerm, width=0.4, height=0.5, x=0.3, y=0.1, opacity=1),
     DropDown('mixer', 'pavucontrol', width=0.4, height=0.6, x=0.3, y=0.1, opacity=1),
-    DropDown('when', 'galculator', x=0.3, y=0.1, opacity=1),
-    DropDown('bitwarden', 'bitwarden-desktop', width=0.4, height=0.6, x=0.3, y=0.1, opacity=1),
+    DropDown('calc', 'galculator', width=0.2, height=0.4,x=0.3, y=0.1, opacity=1),
+    DropDown('cal', myTerm + '-e calcurse', width=0.4, height=0.5, x=0.3, y=0.1, opacity=1),
 ]))
 # extend keys list with keybinding for scratchpad
 keys.extend([
     Key(["control"], "1", lazy.group['scratchpad'].dropdown_toggle('term')),
     Key(["control"], "2", lazy.group['scratchpad'].dropdown_toggle('mixer')),
-    Key(["control"], "3", lazy.group['scratchpad'].dropdown_toggle('when')),
-    Key(["control"], "4", lazy.group['scratchpad'].dropdown_toggle('bitwarden')),
+    Key(["control"], "3", lazy.group['scratchpad'].dropdown_toggle('calc')),
+    Key(["control"], "4", lazy.group['scratchpad'].dropdown_toggle('cal')),
 ])
 
 layouts = [
@@ -204,7 +210,7 @@ def init_widgets_list():
                        filename = "~/.config/qtile/Assets/1-1.png"
                        ),
               widget.Image(
-                       filename = "~/.config/qtile/Assets/arch.png",
+                       filename = "~/.config/qtile/Assets/nixos.png",
                        scale = "True",
                        background='#3C3836',
                        mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn("sh /home/dave/.config/rofi/launchers/colorful/launcher.sh")},
@@ -339,12 +345,12 @@ def init_widgets_screen1():
 
 def init_widgets_screen2():
     widgets_screen2 = init_widgets_list()
-    del widgets_screen2[23:32]               # Slicing removes unwanted widgets (systray) on Monitors 2
+    del widgets_screen2[10:32]               # Slicing removes unwanted widgets (systray) on Monitors 2
     return widgets_screen2                 # Monitor 2 will display all widgets in widgets_list
 
 def init_widgets_screen3():
     widgets_screen3 = init_widgets_list()
-    del widgets_screen3[10:32]               # Slicing removes unwanted widgets on Monitors 3
+    del widgets_screen3[23:32]               # Slicing removes unwanted widgets on Monitors 3
     return widgets_screen3                 # Monitor 2 will display all widgets in widgets_list
 
 def init_screens():

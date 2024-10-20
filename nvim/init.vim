@@ -67,6 +67,7 @@ call plug#begin()
  Plug 'morhetz/gruvbox'
  Plug 'rust-lang/rust.vim'
  Plug 'nlknguyen/vim-docker-compose-syntax'
+ Plug 'elkowar/yuck.vim'
 call plug#end()
 
 "####################################################################

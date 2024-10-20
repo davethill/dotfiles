@@ -6,5 +6,6 @@
 flameshot &
 udiskie -t &
 nm-applet &
+localsend &
 #barrier &
 

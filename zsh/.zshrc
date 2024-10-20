@@ -29,6 +29,12 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zshhistory
 setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 
 # Basic auto/tab complete:
 autoload -U compinit
@@ -41,21 +47,28 @@ _comp_options+=(globdots)               # Include hidden files.
 bindkey '^ ' autosuggest-accept
 
 # Load aliases and shortcuts if existent.
-[ -f "$HOME/.config/zsh/.zsh/aliasrc-apt" ] && source "$HOME/.config/zsh/.zsh/aliasrc-apt"
+#[ -f "$HOME/.config/zsh/.zsh/aliasrc-apt" ] && source "$HOME/.config/zsh/.zsh/aliasrc-apt"
 #[ -f "$HOME/.config/zsh/.zsh/aliasrc-dnf" ] && source "$HOME/.config/zsh/.zsh/aliasrc-dnf"
 #[ -f "$HOME/.config/zsh/.zsh/aliasrc-pacman" ] && source "$HOME/.config/zsh/.zsh/aliasrc-pacman"
+[ -f "$HOME/.config/zsh/.zsh/aliasrc-apt" ] && source "$HOME/.config/zsh/.zsh/aliasrc-nix"
 
 # Load ; should be last.
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-source /usr/share/autojump/autojump.zsh 2>/dev/null
+#source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
+#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+#source /usr/share/autojump/autojump.zsh 2>/dev/null
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Keybindings
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+bindkey '^[w' kill-region
 bindkey -v
 
-
+# Shell integrations
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(zoxide init zsh)"
 
 eval "$(starship init zsh)"
