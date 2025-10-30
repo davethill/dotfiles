@@ -48,6 +48,22 @@ export EDITOR=vim
  alias k=kubectl
 
 # Alias for SSH
+ alias eopsin='TERM=xterm-256color ssh root@10.0.0.7'
+ alias nxtcld='TERM=xterm-256color ssh dave@10.0.0.8'
+ alias pihole='TERM=xterm-256color ssh dave@10.0.0.250'
+ alias media='TERM=xterm-256color ssh dave@10.0.0.130'
+ alias ansible='TERM=xterm-256color ssh dave@10.0.0.131'
+ alias theCraft='TERM=xterm-256color ssh dave@10.0.0.132'
+ alias pi5-1='TERM=xterm-256color ssh dave@10.0.0.151'
+ alias pi5-2='TERM=xterm-256color ssh dave@10.0.0.152'
+ alias pi5-3='TERM=xterm-256color ssh dave@10.0.0.153'
+ alias pi5-4='TERM=xterm-256color ssh dave@10.0.0.154'
+ alias pi5-5='TERM=xterm-256color ssh dave@10.0.0.155'
+ alias bato='TERM=xterm-256color ssh root@10.0.0.218'
+ alias deepseek='TERM=xterm-256color ssh root@10.0.0.7 -t "docker exec -it ollama ollama run --verbose deepseek-r1:8b; bash -l"'
+ alias mistral='TERM=xterm-256color ssh root@10.0.0.7 -t "docker exec -it ollama ollama run --verbose mistral:7b; bash -l"'
+ alias qwen='TERM=xterm-256color ssh root@10.0.0.7 -t "docker exec -it ollama ollama run --verbose qwen2.5:7b; bash -l"'
+ alias gemma='TERM=xterm-256color ssh root@10.0.0.7 -t "docker exec -it ollama ollama run --verbose gemma3:4b; bash -l"'
 
 #Alias for Humans
  alias df='df -h'

@@ -1,0 +1,119 @@
+// =============================================================================
+//                      _                
+// __      ____ _ _   _| |__   __ _ _ __ 
+// \ \ /\ / / _` | | | | '_ \ / _` | '__|
+//  \ V  V / (_| | |_| | |_) | (_| | |   
+//   \_/\_/ \__,_|\__, |_.__/ \__,_|_|   
+//                |___/
+// =============================================================================
+
+{
+	// -------------------------------------------------------------------------
+	// Global configuration
+	// -------------------------------------------------------------------------
+
+	"layer": "top",
+	"position": "top",
+  "gtk-layer-shell": true,
+	"modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["clock#date", "clock#time"],
+	"modules-right": ["memory", "cpu", "pulseaudio", "tray"],
+
+	// -------------------------------------------------------------------------
+	// Modules
+	// -------------------------------------------------------------------------
+
+  "custom/ownarrow": {
+		"format": ""
+  },
+  "hyprland/window": {
+    "format": "{}"
+  },
+  "app_ids-mapping": {
+    "firefoxdeveloperedition": "firefox-developer-edition"
+  },
+	"clock#time": {
+		"interval": 60,
+		"format": "{:%I:%M %p}",
+		"tooltip": false
+	},
+	"clock#date": {
+		"interval": 20,
+		"format": "{:%e %b %Y}",
+		"tooltip": false
+	},
+	"cpu": {
+		"interval": 1,
+		"tooltip": false,
+		"format": "  {usage}%", // Icon: microchip
+		"states": {
+		  "warning": 70,
+		  "critical": 90
+		},
+    "on-click": "exec foot -e btop --utf-force"
+	},
+	"memory": {
+		"interval": 1,
+		"format": "  {used:0.1f} GiB", // Icon: memory
+		"states": {
+			"warning": 70,
+			"critical": 90
+    },
+    "on-click": "exec foot -e btop --utf-force"
+	},
+  "hyprland/workspaces": {
+		"disable-scroll": false,
+		"all-outputs": true,
+    "on-click": "activate",
+		"format": "{icon}",
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": [],
+      "9": [],
+      "10": []
+	  },
+   "format-icons": {
+      "1": "一",
+      "2": "二",
+      "3": "三",
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "十",
+
+      "default": "一"
+    }
+  },
+  "tray": {
+    "icon-size": 20,
+    "spacing": 0
+  },
+	"pulseaudio": {
+		"scroll-step": 1,
+		"format": "{icon} {volume}%",
+		"format-bluetooth": "{icon} {volume}%",
+		"format-muted": "",
+		"format-icons": {
+			"headphones": "",
+			"handsfree": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": ["", ""]
+		},
+		//"on-click": "pavucontrol"
+		"on-click-right": "amixer set Master toggle; pkill -x -RTMIN+11 waybar",
+    "on-click": "easyeffects"
+	}
+}
+
