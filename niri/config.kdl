@@ -62,7 +62,7 @@ output "DP-3" {
 }
 
 layout {
-    gaps 14
+    gaps 10
 
     center-focused-column "never"
 
@@ -98,6 +98,7 @@ layout {
 }
 
 spawn-at-startup "waybar"
+spawn-at-startup "swww-daemon"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -131,6 +132,17 @@ window-rule {
     open-floating true
     default-column-width { proportion 0.35; }
     default-window-height { fixed 800; }
+}
+
+window-rule {
+    match app-id="steam"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="zoom"
+    open-maximized true
+    open-on-output "DP-3"
 }
 
 // Open the Firefox picture-in-picture player as floating by default.
@@ -384,7 +396,7 @@ binds {
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
 
-    Mod+Shift+S { screenshot; }
+    Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
 
