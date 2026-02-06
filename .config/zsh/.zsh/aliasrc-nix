@@ -1,0 +1,71 @@
+#
+
+# # ex - archive extractor
+
+# # usage: ex <file>
+
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.tar.xz)    tar xJf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1     ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+export EDITOR=vim
+
+
+# Alias to modified commands
+ alias ls='exa -l --long --header --color=always --group-directories-first'
+ alias la='exa -la --long --header --color=always --group-directories-first'
+ alias ..='cd ..'
+ alias ~='cd ~'
+ alias cls="clear && fastfetch"
+ alias clss="clear"
+ alias diff='colordiff'
+ alias egrep='egrep --color=auto'
+ alias fgrep='fgrep --color=auto'
+ alias grep='grep --color=auto'
+ alias vim="nvim"
+ alias lan='ip addr | grep "inet "&& grep "nameserver" /etc/resolv.conf'
+ alias wan="curl ip.me"
+ alias weather="curl wttr.in/Detroit"
+ alias spt='/home/dave/Scripts/launchspt'
+ alias k=kubectl
+ alias ff=fastfetch
+
+# Alias for SSH
+ alias eopsin='TERM=xterm-256color ssh root@10.0.0.7'
+ alias nxtcld='TERM=xterm-256color ssh dave@10.0.0.8'
+ alias pihole='TERM=xterm-256color ssh dave@10.0.0.250'
+ alias theCraft='TERM=xterm-256color ssh dave@10.0.0.132'
+ alias media='TERM=xterm-256color ssh dave@10.0.0.100'
+ alias pi5-1='TERM=xterm-256color ssh dave@10.0.0.151'
+ alias pi5-2='TERM=xterm-256color ssh dave@10.0.0.152'
+ alias pi5-3='TERM=xterm-256color ssh dave@10.0.0.153'
+ alias pi5-4='TERM=xterm-256color ssh dave@10.0.0.154'
+ alias pi5-5='TERM=xterm-256color ssh dave@10.0.0.155'
+ alias bato='TERM=xterm-256color ssh root@10.0.0.218'
+ alias deepseek='TERM=xterm-256color ssh root@10.0.0.7 -t "docker exec -it ollama ollama run --verbose deepseek-r1:8b; bash -l"'
+ alias mistral='TERM=xterm-256color ssh root@10.0.0.7 -t "docker exec -it ollama ollama run --verbose mistral:7b; bash -l"'
+ alias qwen='TERM=xterm-256color ssh root@10.0.0.7 -t "docker exec -it ollama ollama run --verbose qwen3-vl:4b; bash -l"'
+ alias gemma='TERM=xterm-256color ssh root@10.0.0.7 -t "docker exec -it ollama ollama run --verbose gemma3:4b; bash -l"'
+
+
+#Alias for Humans
+ alias df='df -h'
