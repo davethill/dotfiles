@@ -1,5 +1,5 @@
 [general]
-import = ["themes/noctalia.toml"]
+import = ["~/.config/alacritty/themes/noctalia.toml"]
 
 [colors.bright]
 black = "#5c6370"
