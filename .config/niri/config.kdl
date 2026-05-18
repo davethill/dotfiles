@@ -113,7 +113,7 @@ hotkey-overlay {
 
  prefer-no-csd
 
-screenshot-path "~/Nextcloud/Screenshots/screenshot from %Y-%m-%d %H-%M-%S.png"
+screenshot-path "~/Screenshots/screenshot from %Y-%m-%d %H-%M-%S.png"
 
 animations {
     // Uncomment to turn off all animations.
