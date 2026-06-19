@@ -97,7 +97,7 @@ layout {
     }
 }
 
-spawn-at-startup "noctalia-shell"
+spawn-at-startup "noctalia"
 spawn-at-startup "swww-daemon"
 spawn-at-startup "nextcloud"
 spawn-at-startup "bitwarden"
