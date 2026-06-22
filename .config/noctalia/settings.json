@@ -619,7 +619,7 @@
     },
     "wallpaper": {
         "automationEnabled": false,
-        "directory": "/home/dave/Pictures/Wallpapers",
+        "directory": "/home/dave/Documents",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "favorites": [
