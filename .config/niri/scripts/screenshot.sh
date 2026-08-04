@@ -15,7 +15,7 @@
 # XDG_SCREENSHOTS_DIR="$HOME/Screenshots"
 
 prompt='Screenshot'
-mesg="DIR: ~/Screenshots"
+mesg="DIR: ~/sync/Screenshots"
 
 # Screenshot Filename
 source ~/.config/ml4w/settings/screenshot-filename.sh
