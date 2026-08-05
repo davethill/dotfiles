@@ -179,7 +179,7 @@ binds {
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Mod+Ctrl+V hotkey-overlay-title="Clipboard History: cliphist" { spawn-sh "cliphist list | fuzzel -d | cliphist decode | wl-copy"; }
     //Mod+D hotkey-overlay-title="Run an Application: rofi" { spawn-sh "rofi -show drun -show-icons"; }
-    Mod+E hotkey-overlay-title="Run an Application: pcmanfm" { spawn "pcmanfm"; }
+    Mod+E hotkey-overlay-title="Run an Application: Files (nautilus)" { spawn "nautilus"; }
     Mod+Ctrl+E hotkey-overlay-title="Run an Application: yazi" { spawn-sh "alacritty -e yazi"; }
     Mod+Alt+Q hotkey-overlay-title="Run an Application: firefox" { spawn "firefox"; }
     Mod+Shift+2 hotkey-overlay-title="Run an Application: pavucontrol" { spawn "pavucontrol"; }
