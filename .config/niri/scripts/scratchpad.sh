@@ -5,7 +5,7 @@ NOTE_FILE="$HOME/notes/scratchpad.md"
 scratch_win=$(niri msg --json windows | jq -r '.[] | select(.app_id == "scratchpad") | "\(.id) \(.is_focused)"' 2>/dev/null | head -n1)
 
 if [ -z "$scratch_win" ]; then
-    alacritty --class scratchpad -e nvim "$NOTE_FILE" &
+    alacritty --class scratchpad -e nvim -c "autocmd TextChanged,TextChangedI,InsertLeave,FocusLost,BufLeave * silent! wall" "$NOTE_FILE" &
 else
     win_id=$(echo "$scratch_win" | awk '{print $1}')
     is_focused=$(echo "$scratch_win" | awk '{print $2}')
