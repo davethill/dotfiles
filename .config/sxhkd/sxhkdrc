@@ -135,6 +135,9 @@ XF86Calculator
 # launch ranger
 super + e
     alacritty -e ranger
+# launch floating scratchpad
+super + alt + n
+    tdrop -ma -w 65% -h 55% -x 17.5% -y 20% -n scratchpad alacritty --class scratchpad -e nvim /home/dave/notes/scratchpad.md
 
 ########################
 #### Audio Controls ####
