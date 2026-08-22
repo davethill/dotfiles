@@ -154,7 +154,7 @@ window-rule {
 
 window-rule {
     match app-id="alacritty-dev"
-    open-fullscreen true
+    open-maximized true
 }
 
 window-rule {
