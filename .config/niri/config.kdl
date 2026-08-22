@@ -153,6 +153,11 @@ window-rule {
 }
 
 window-rule {
+    match app-id="alacritty-dev"
+    open-fullscreen true
+}
+
+window-rule {
     match app-id="rofi -show drun -show-icons"
     open-maximized true
 }
@@ -189,6 +194,7 @@ binds {
     Mod+E hotkey-overlay-title="Run an Application: Files (nautilus)" { spawn "nautilus"; }
     Mod+Ctrl+E hotkey-overlay-title="Run an Application: yazi" { spawn-sh "alacritty -e yazi"; }
     Mod+N hotkey-overlay-title="Toggle Scratchpad" { spawn-sh "~/.config/niri/scripts/scratchpad.sh"; }
+    Mod+T hotkey-overlay-title="Open Dev Session: tmux" { spawn "alacritty" "--class" "alacritty-dev" "-e" "dev"; }
     Mod+Alt+Q hotkey-overlay-title="Run an Application: firefox" { spawn "firefox"; }
     Mod+Shift+2 hotkey-overlay-title="Run an Application: pavucontrol" { spawn "pavucontrol"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
